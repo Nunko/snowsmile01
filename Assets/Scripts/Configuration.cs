@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Naninovel;
@@ -10,6 +8,7 @@ public class Configuration : MonoBehaviour
     IAudioManager audioManager;
     IStateManager settingsManager;
     public GameObject MusicVolumeText;
+    public Slider MusicVolumeSlider;
     bool isChanged;
 
     void Awake()
@@ -17,6 +16,12 @@ public class Configuration : MonoBehaviour
         audioManager = Engine.GetService<IAudioManager>();
         settingsManager = Engine.GetService<IStateManager>();   
         isChanged = false;  
+    }
+
+    void OnEnable()
+    {
+        LoadSliderValue();
+        LoadValueText();
     }
 
     void Update()
@@ -58,5 +63,16 @@ public class Configuration : MonoBehaviour
         {
             isChanged = true;
         }
+    }
+
+    void LoadSliderValue()
+    {
+        MusicVolumeSlider.value = audioManager.BgmVolume*100;
+    }
+
+    void LoadValueText()
+    {
+        int inputNumber = (int)audioManager.BgmVolume*100;
+        MusicVolumeText.GetComponent<TextMeshProUGUI>().text = inputNumber.ToString();
     }
 }

@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Naninovel;
 
 public class MinigameAddBall : MonoBehaviour
 {
@@ -14,6 +12,6 @@ public class MinigameAddBall : MonoBehaviour
 
     void ChooseImage()
     {        
-        gameObject.GetComponent<SpriteRenderer>().sprite = BallImages[Random.Range(0, BallImages.Count)];
+        this.GetComponent<SpriteRenderer>().sprite = BallImages[Random.Range(0, BallImages.Count)];
     }
 }

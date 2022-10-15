@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BtnGain : MonoBehaviour
 {
@@ -158,7 +157,7 @@ public class BtnGain : MonoBehaviour
 
     IEnumerator MovePoint(GameObject Obj)
     {
-        Vector3 targetPoint = gameObject.transform.position;
+        Vector3 targetPoint = this.transform.position;
 
         if (Obj != null)
         {

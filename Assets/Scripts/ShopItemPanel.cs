@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class ShopItemPanel : MonoBehaviour
 {
@@ -15,6 +11,6 @@ public class ShopItemPanel : MonoBehaviour
     
     public void ClickItemPanel()
     {
-        shop.ClickItemPanel(int.Parse(gameObject.name[(gameObject.name.Length - 1)].ToString()));
+        shop.ClickItemPanel(int.Parse(this.name[(this.name.Length - 1)].ToString()));
     }
 }
